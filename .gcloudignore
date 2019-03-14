@@ -1,0 +1,13 @@
+# This file specifies files that are *not* uploaded to Google Cloud Platform
+# For more information, run:
+#   $ gcloud topic gcloudignore
+#
+
+.gcloudignore
+.git
+.gitignore
+
+# Binaries for programs and plugins
+mylaps-streamer
+main
+users.json

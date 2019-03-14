@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="/docs/SegmentDisplay/excanvas.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/SegmentDisplay/segment-display.js"></script>
+</head>
+<body>
+  <div class="menubar">
+    <div class="content">
+      <img class="logo" src="https://www.mylaps.com/app/themes/mylaps/assets/images/logo-mylaps.svg" alt="Mylaps logo">
+      <span>Rondebord</span>
+      <a class="btn login" href="/api/login">Login</a>
+      <label class="btn your" onclick="showSkaters()" for="showCombined">Schaatsers</label>
+      <canvas id="display" width="250" height="51">Your browser is unfortunately not supported.</canvas>
+    </div>
+  </div>
+  <input type="checkbox" id="showCombined" name="showCombined" style="visibility: collapse" />
+  <div class="content" id="combined">
+    <div id="combinedresult" style="word-break: break-word;"><h1>Others</h1><span></span></div>
+  </div>
+  <div class="content" id="individual">
+    <div id="result" style="word-break: break-word;"><h1>Ice Skater</h1><span></span></div>
+  </div>
+  <script type="text/javascript" src="/app.js"></script>
+</body>

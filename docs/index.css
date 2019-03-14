@@ -1,0 +1,159 @@
+body { margin: 0; padding: 0; background: #e8ecee; font-family: sans-serif; }
+
+.menubar {
+	background: #fff;
+	height: 71px;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,.3);
+	margin-top: 60px;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-around;
+}
+
+#display {
+	background: #000;
+	padding: 10px;
+	right: 0;
+	margin-left: auto;
+}
+
+.content {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.menubar .content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex: 1;
+}
+
+.menubar span {
+	font-size: 25px;
+	margin: 0 20px 0 10px;
+	font-weight: bold;
+	font-style: italic;
+	text-transform: uppercase;
+	padding-top: 2px;
+}
+
+.logo {
+	flex: 1;
+	width: 100%;
+	max-width: 150px;
+}
+
+.btn {
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-left: 20px;
+	text-decoration: none;
+	padding: 5px 15px;
+	background: #09c712;
+	border-radius: 4px;
+	color: #fff;
+	display: inline-block;
+}
+
+.btn.login {
+	background: #09a6c7;
+}
+
+.activity .info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 50px;
+	align-items: center;
+	padding: 0 10px;
+	background: white;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,.3);
+}
+
+.activity .laps {
+	min-height: 150px;
+	display: flex;
+	flex-direction: row;
+	background: white;
+	box-shadow: 0 0 4px 1px rgba(0,0,0,.3);
+	align-items: flex-end;
+	margin: 3px 0 20px;
+	flex-wrap: wrap;
+	overflow-x: auto;
+	overflow-y: visible;
+	position: relative;
+}
+
+.activity .laps .lap {
+	content: "";
+	min-width: 20px;
+	margin-right: 2px;
+	overflow: visible;
+	padding-bottom: 30px;
+}
+.activity .laps .lap.slow { background: lightgray; }
+.activity .laps .lap.ok { background: #09a6c7; }
+.activity .laps .lap.ok.fast { background: green; }
+.activity .laps .lap.ok.ultra { background: yellow; }
+
+.activity .laps .lap .box { display: none; }
+/* hover */
+.activity .laps:hover .lap { position: relative; }
+.activity .laps:hover .lap.fast  .box,
+.activity .laps:hover .lap.ultra .box,
+.activity .laps:hover .lap.ok    .box {
+	display: block;
+	line-height: 1em;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	position: absolute;
+	bottom: 5px;
+	z-index: 100;
+	margin: 0;
+	width: 20px;
+	text-align: left;
+	overflow: visible;
+	word-break: keep-all;
+}
+.activity .laps:hover .lap .box .date { display:none; }
+/* non-hover devices (touch) */
+@media (hover: none) {
+	.activity .laps .lap { position: relative; }
+	.activity .laps .lap .box {
+		display: block;
+    line-height: 1em;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 5px;
+    z-index: 100;
+    margin: 0;
+    width: 20px;
+    text-align: left;
+    overflow: visible;
+    word-break: keep-all;
+	}
+	.activity .laps .lap .box .date { display:none; }
+}
+
+.length {
+	display: inline-block;
+	border-radius: 4px;
+	background: #09a6c7;
+	padding: 2px 3px;
+	color: #fff;
+}
+
+#showCombined + * { display: none; }
+#showCombined:checked + * { display: block; }
